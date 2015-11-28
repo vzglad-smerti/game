@@ -5,12 +5,12 @@ var supports = {
 
 var global = {
 	registrImport    : {},
-    registrPackage   : {}
+    registrPackage   : {},
+    registrJsonP     : {}
 }
 
-global.scriptReplace = {
-  "/webRTC/GetIp.js" : "https://raw.githubusercontent.com/vzglad-smerti/get_ip/master/GetIp.js"
-}
+
+global.scriptReplace = {}
 
 /*
 Всё скрипты которые грузим не через imports

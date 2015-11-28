@@ -16,21 +16,19 @@ json_p("/", ok, fail); // fail, 200 но некорректный скрипт
 
 */
 
-var registr = {};
-
 function json_p(url, onSuccess, onError) {
   var scriptOk = false;
   var callbackName = 'cb' + String(Math.random()).slice(-6);
   url += ~url.indexOf('?') ? '&' : '?';
-  url += 'callback=registr.' + callbackName;
-  registr[callbackName] = function(data) {
+  url += 'callback=global.registrJsonP.' + callbackName;
+  global.registrJsonP[callbackName] = function(data) {
     scriptOk = true; 
-    delete registr[callbackName]; 
+    delete global.registrJsonP[callbackName]; 
     onSuccess(data); 
   };
   function checkCallback() {
     if (scriptOk) return; 
-    delete registr[callbackName];
+    delete global.registrJsonP[callbackName];
     onError(url);
   }
   var script = document.createElement('script');

@@ -1,6 +1,8 @@
 var supports = {
 	localStorage     : false,
-	webRTC			 : false
+	cookie			 : false,
+	webRTC			 : false,
+
 }
 
 var global = {

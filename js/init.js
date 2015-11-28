@@ -8,16 +8,11 @@ if(navigator.userAgent.indexOf('Opera Mini') != -1){
 if (packages("init")){
 imports([
 		"/js/src/supports/supports_html5.js",
-		"/js/src/espionage/espionage.js"
 ], 
 function (){	
-		init.test = function (){
-			alert('6');
-		}
-
-        
-
-		//alert(supports_html.LocalStorage());
+		alert(supports_html.WebRTC());
+		alert(supports_html.LocalStorage());
+		alert(supports_html.Cookie());
 }, err);	
 
 } else {

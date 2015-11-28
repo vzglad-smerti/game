@@ -1,6 +1,6 @@
 if (packages("espionage")){
 imports([
-"/js/function/WebRTC/GetIp.js"
+"/js/GitHub/vzglad-smerti/get_ip/GetIp.js"
 	], 
 function (){	
 		GetIp(function(ip){

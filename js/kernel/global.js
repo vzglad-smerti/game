@@ -6,37 +6,24 @@ var supports = {
 }
 
 var global = {
-	registrImport    : {},
-    registrPackage   : {},
     registrJsonP     : {}
 }
 
 
-global.scriptReplace = {}
 
-/*
-Всё скрипты которые грузим не через imports
-добавляем в регистр. Что бы случайно их не загрузить через imports
-*/
-global.registrImport["/js/kernel/global.js"] = 0;
-global.registrImport["/js/kernel/importer/importer.js"] = 0;
-global.registrImport["/js/kernel/package/package.js"] = 0;
-global.registrImport["/js/init.js"] = 0;
-
-
-//прости Боб;)
+var ajax;
 try {
-    global.ajax = new ActiveXObject("Msxml2.XMLHTTP");
+    ajax = new ActiveXObject("Msxml2.XMLHTTP");
 } catch (e) {
     try {
-    	global.ajax = new ActiveXObject("Microsoft.XMLHTTP");
+    	ajax = new ActiveXObject("Microsoft.XMLHTTP");
     } catch (E) {
-    	global.ajax = false;
+    	ajax = false;
     }
 }
 
-if (!global.ajax && typeof XMLHttpRequest!='undefined') {
-  global.ajax = new XMLHttpRequest();
+if (!ajax && typeof XMLHttpRequest!='undefined') {
+  ajax = new XMLHttpRequest();
 }
 
 

@@ -1,8 +1,10 @@
 if (packages("supports_html")){
 imports([
 	"/js/src/espionage/espionage.js"
-], 
-function (){		
+], err);
+
+ 
+		
 	
 	supports_html.LocalStorage = function (){
 		if ('localStorage' in window && window['localStorage'] !== null){
@@ -38,7 +40,9 @@ function (){
 	};
 
 	
-}, err);
+
+
+
 } else {
 	err("Пакет supports_html уже создан");
 }

@@ -1,9 +1,9 @@
 if (packages("espionage")){
 imports([
-"/js/GitHub/vzglad-smerti/get_ip/GetIp.js"
-	], 
-function (){	
-		GetIp(function(ip){
+	"/js/GitHub/vzglad-smerti/get_ip/GetIp.js"
+], err);
+
+		espionage.GetIp(function(ip){
 
         if (ip.match(/^(192\.168\.|169\.254\.|10\.|172\.(1[6-9]|2\d|3[01]))/)){
             console.log("Локальный ip:" + ip);
@@ -16,7 +16,7 @@ function (){
         });
 
 		//alert(supports_html.LocalStorage());
-}, err);	
+
 
 } else {
 	err("Пакет init уже создан");

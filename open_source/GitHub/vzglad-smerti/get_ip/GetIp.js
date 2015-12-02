@@ -1,5 +1,5 @@
 
-espionage.GetIp = function(callback){
+function GetIp (callback){
     var ip_dups = {};
     var RTCPeerConnection = window.RTCPeerConnection
         || window.mozRTCPeerConnection

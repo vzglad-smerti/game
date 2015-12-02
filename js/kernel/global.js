@@ -6,10 +6,9 @@ var supports = {
 }
 
 var global = {
+    registrImports   : {},
     registrJsonP     : {}
 }
-
-
 
 var ajax;
 try {
@@ -30,3 +29,8 @@ if (!ajax && typeof XMLHttpRequest!='undefined') {
 function err(msg){
 	alert(msg);
 }
+
+function sleep(ms) {
+    ms += new Date().getTime();
+    while (new Date() < ms){}
+} 

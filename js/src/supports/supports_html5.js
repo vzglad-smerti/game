@@ -1,26 +1,15 @@
-if (packages("supports_html")){
-imports([
-	"/js/src/espionage/espionage.js"
-], err);
-
- 
-		
-	
-	supports_html.LocalStorage = function (){
+supports_html = {
+	LocalStorage : function (){
 		if ('localStorage' in window && window['localStorage'] !== null){
 			return true;
 		} else {
     		return false;
   		}
-	};
+	},
 
-	supports_html.Cookie = function(){
 
-			return true;
 
-	};
-
-	supports_html.WebRTC = function (){
+	WebRTC : function (){
 		var RTCPeerConnection = window.RTCPeerConnection
         || window.mozRTCPeerConnection
         || window.webkitRTCPeerConnection;
@@ -37,12 +26,5 @@ imports([
 		} else {
 			return true;
 		}
-	};
-
-	
-
-
-
-} else {
-	err("Пакет supports_html уже создан");
+	}
 }

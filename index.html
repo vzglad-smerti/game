@@ -2,23 +2,37 @@
 <html lang="en">
 	<head>
 		<title>Generals</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" type="text/css" href="/styles/style_interfece_2014.css" />
+        <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=3.0;"/>
+	
+        <script type="text/javascript" src="/js/libs/1.11.3/jquery.min.js"></script>
+        <script type="text/javascript" src="/js/kernel/kernel.js"></script>
 	</head>
 	<body>
- 	
+ 		<div class="wrapper">
+        	<div class="wrap">
+        		<div id="header">
+            
+            		
+        		<script type="text/javascript">
+        			$(document).ready(function() {
+        				_.modules.load("test");
+        				
+                        _.modules.test.alert();
+                        _.modules.test.set();
+                        _.modules.test.alert();
 
+     
+					});
+        		</script>
+          
+        		</div>
+        		<div id="message">Game Load</div>
 
-
-
-
-        <div id="message">Game Load</div>
-
-		
+        	  <div id="footer"></div>
+           </div>
+        </div>
 	</body>
-
-	    <script src="/js/kernel/global.js"></script>
-		<script src="/js/kernel/importer/importer.js"></script>
-		<script src="/js/init.js"></script>
-
 </html>

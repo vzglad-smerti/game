@@ -186,20 +186,20 @@ a.logotype{
 }
 
 a.left span{
-    background: url("../img/sprite_header.png") -316px 0;
-    position: absolute;
-    left: 31px;
-    top: 10px;
-    width: 20px;
-    height: 24px;
-}
-a.right span{
     background: url("../img/sprite_header.png") -99px 0;
     position: absolute;
-    right: 34px;
+    left: 34px;
     top: 10px;
     width: 25px;
     height: 26px;
+}
+a.right span{
+    background: url("../img/sprite_header.png") -316px 0;
+    position: absolute;
+    right: 31px;
+    top: 10px;
+    width: 20px;
+    height: 24px;
 }
 @media only screen and (max-width: 450px) {
     a.left, a.right, a.left:hover, a.right:hover{

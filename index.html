@@ -9,27 +9,42 @@
 	
         <script type="text/javascript" src="/js/libs/1.11.3/jquery.min.js"></script>
         <script type="text/javascript" src="/js/kernel/kernel.js"></script>
+		<script type="text/javascript">
+        	$(document).ready(function() {
+                function start(router){
+                	switch(router.modules){
+                		case "/":
+                			router.modules = "/test";
+                		break;
+                	}
+                	var mmm = router.modules;
+               		_.modules.load(mmm);
+              		_.modules[mmm].init(router.location,router.data);
+           		}
+
+           		function hr(url){
+           			start(_.router.parseURL(url)); 
+           			history.pushState(false, false, url);
+           		}
+           		
+           		$("a").click(function(e) {
+    				e.preventDefault();
+    				hr($(this).attr('value'));	
+				});
+
+                start(_.router.parseURL(location.pathname)); 
+			});
+        </script>
 	</head>
 	<body>
  		<div class="wrapper">
         	<div class="wrap">
         		<div id="header">
-            
-            		
-        		<script type="text/javascript">
-        			$(document).ready(function() {
-        				_.modules.load("test");
-        				
-                        _.modules.test.alert();
-                        _.modules.test.set();
-                        _.modules.test.alert();
 
-     
-					});
-        		</script>
-          
         		</div>
-        		<div id="message">Game Load</div>
+        		<div id="message" >Game Load
+        			<a value="/test]||[clik]||[gg">URL testing</a>
+        		</div>
 
         	  <div id="footer"></div>
            </div>

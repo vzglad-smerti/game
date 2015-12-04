@@ -11,28 +11,16 @@
         <script type="text/javascript" src="/js/kernel/kernel.js"></script>
 		<script type="text/javascript">
         	$(document).ready(function() {
-                function start(router){
-                	switch(router.modules){
-                		case "/":
-                			router.modules = "/test";
-                		break;
-                	}
-                	var mmm = router.modules;
-               		_.modules.load(mmm);
-              		_.modules[mmm].init(router.location,router.data);
-           		}
+        		var rd = {
+        			"/" : "test",
+        		}
 
-           		function hr(url){
-           			start(_.router.parseURL(url)); 
-           			history.pushState(false, false, url);
-           		}
-           		
            		$("a").click(function(e) {
     				e.preventDefault();
-    				hr($(this).attr('value'));	
+    				_.router.hr(this,rd);	
 				});
 
-                start(_.router.parseURL(location.pathname)); 
+                _.router.start(_.router.parseURL(location.pathname),rd); 
 			});
         </script>
 	</head>

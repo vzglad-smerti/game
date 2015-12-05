@@ -17,11 +17,14 @@
 
            		$("a").click(function(e) {
     				e.preventDefault();
-    				_.router.hr(this,rd);	
+    				_.router.hr(this,rd);
+    				return false;	
 				});
 
                 _.router.start(_.router.parseURL(location.pathname),rd); 
 			});
+
+
         </script>
 	</head>
 	<body>
@@ -31,7 +34,7 @@
 
         		</div>
         		<div id="message" >Game Load
-        			<a value="/test]||[clik]||[gg">URL testing</a>
+        			<a href="return /test]||[clik]||[gg">URL testing</a>
         		</div>
 
         	  <div id="footer"></div>

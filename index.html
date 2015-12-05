@@ -10,24 +10,23 @@
         <script type="text/javascript" src="/js/libs/1.11.3/jquery.min.js"></script>
         <script type="text/javascript" src="/js/kernel/kernel.js"></script>
 		<script type="text/javascript">
-        	$(document).ready(function() {
+			$(document).ready(function() {
         		var rd = {
         			"/" : "test",
         		}
 
-           		$("a").click(function(e) {
-    				e.preventDefault();
-    				_.router.hr(this,rd);
+           		$("#c a").click(function() {
+   					_.router.hr(this,rd);
     				return false;	
 				});
 
-                _.router.start(_.router.parseURL(location.pathname),rd); 
+				_.router.start(_.router.parseURL(location.pathname),rd); 
+
 			});
-
-
         </script>
 	</head>
 	<body>
+	<div id ="c">
  		<div class="wrapper">
         	<div class="wrap">
         		<div id="header">
@@ -40,5 +39,6 @@
         	  <div id="footer"></div>
            </div>
         </div>
+    </div>
 	</body>
 </html>

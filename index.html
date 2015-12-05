@@ -15,13 +15,11 @@
         		var rd = {
         			"/" : "test",
         		}
-
-           		$("#c a").click(function(e) {
-           			e.preventDefault() 
+        		$(document).on('click', '#c a', function(e){
+        			e.preventDefault() 
    					console.info("c");
     				return router.hr(this,rd);
-				});
-
+        		});
 				router.start(router.parseURL(location.pathname),rd); 
 
 			});

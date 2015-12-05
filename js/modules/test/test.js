@@ -7,22 +7,17 @@
     m.init = function(location, data){	
        var views = _.expansion.load("views");
        
-       var start = new Date();
+
         views.Get("/js/modules/test/json/ru.json", "/js/modules/test/html/test.html", {
         	boll : true
-        }, "#message")
+        }, "#message");
 
-        var end = new Date();
-        console.info('Скорость ' + (end.getTime()-start.getTime()) + ' мс');
-
-        start = new Date();
-        
         views.Get("/js/modules/test/json/ru.json", "/js/modules/test/html/test.html", {
         	boll : false
-        }, "#message")
+        }, "#message");
         
-        end = new Date();
-        console.info('Скорость ' + (end.getTime()-start.getTime()) + ' мс');
+
+
 
     }
 

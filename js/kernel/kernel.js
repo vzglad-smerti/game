@@ -20,7 +20,6 @@ var _ = {
  			    }).responseText;
             } else {
                 console.log("плагин "+name+" загружен ранее. Не чего страшного");
-                return false;
             }
             return _.modules[name];
     	}
@@ -44,7 +43,6 @@ var _ = {
  			}).responseText;
             } else {
                 console.log("расширение "+name+" загружено ранее. Не чего страшного");
-                return false;
             }
             return _.expansion[name];
     	}

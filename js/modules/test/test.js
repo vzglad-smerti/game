@@ -5,8 +5,10 @@
     }
 
     m.init = function(location, data){	
+       var views = _.expansion.load("views");
+       
        var start = new Date();
-        _.views.Get("/js/modules/test/json/ru.json", "/js/modules/test/html/test.html", {
+        views.Get("/js/modules/test/json/ru.json", "/js/modules/test/html/test.html", {
         	boll : true
         }, "#message")
 
@@ -15,7 +17,7 @@
 
         start = new Date();
         
-        _.views.Get("/js/modules/test/json/ru.json", "/js/modules/test/html/test.html", {
+        views.Get("/js/modules/test/json/ru.json", "/js/modules/test/html/test.html", {
         	boll : false
         }, "#message")
         

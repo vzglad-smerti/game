@@ -11,16 +11,18 @@
         <script type="text/javascript" src="/js/kernel/kernel.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function() {
+        		var router = _.expansion.load("router");
         		var rd = {
         			"/" : "test",
         		}
 
-           		$("#c a").click(function() {
-   					_.router.hr(this,rd);
-    				return false;	
+           		$("#c a").click(function(e) {
+           			e.preventDefault() 
+   					console.info("c");
+    				return router.hr(this,rd);
 				});
 
-				_.router.start(_.router.parseURL(location.pathname),rd); 
+				router.start(router.parseURL(location.pathname),rd); 
 
 			});
         </script>
@@ -33,9 +35,9 @@
 
         		</div>
         		<div id="message" >Game Load
-        			<a href="return /test]||[clik]||[gg">URL testing</a>
+        			
         		</div>
-
+        			<a href="/test]||[clik]||[gg">URL testing</a>
         	  <div id="footer"></div>
            </div>
         </div>

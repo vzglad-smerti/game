@@ -14,10 +14,11 @@
 
 
     m.init = function(location, data){	
+        _.log.set("info", location)
         if (test[location] != undefined){
         	test[location](data);
         } else {
-        	alert("404");
+        	_.log.set("error", "Локации: "+location+" нет в модуле test")
         }
 
         

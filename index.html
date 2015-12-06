@@ -4,8 +4,8 @@
 		<title>Generals</title>
 		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<link rel="stylesheet" type="text/css" href="/styles/style_interfece_2014.css" />
-        <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=3.0;"/>   
+        <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=3.0;"/>  
+
 	</head>
 	<body>
 	<div id ="c">
@@ -29,16 +29,29 @@
 		$(document).ready(function() {
         	var router = _.expansion.load("router");
         	var rd = {
-        			"/" : "test",
+        			"/" : {
+                       modules : "test",
+                       location: "index",
+                       data:     ""
+                    },
         	}
         	
         	$(document).on('click', '#c a', function(e){
         			e.preventDefault() 
-    				return router.hr(this,rd);
+    				router.hr($(this).attr('href'),rd);
         	});
 			
 			router.start(router.parseURL(location.pathname),rd); 
 
+            var db = _.expansion.load("db");
+            _.log.set("info", db)
+            var DB = db.init("/js/kernel/expansion/db/db.json");
+            
+            db.set(DB, "users", "login", "admin")
+            var users =  db.select(DB, "users", "login");
+            alert(users);
 		});
+
     </script>
+
 </html>

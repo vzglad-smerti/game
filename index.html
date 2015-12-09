@@ -2,54 +2,75 @@
 <html lang="en">
 	<head>
 		<title>Generals</title>
-		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+		<link rel="icon" type="image/x-icon" href="/favicon.png" />
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=3.0;"/>  
+	    <style>
+            @font-face {
+            font-family: AmericanCaptain;
+            src: local("AmericanCaptain"),
+                    url("/css/AmericanCaptain.ttf"),
+                    url("/css/AmericanCaptain.otf");
+            }
+            #preloader {
+                position: fixed;
+                left: 0;
+                top: 0;
+                z-index: 999;
+                width: 100%;
+                height: 100%;
+                overflow: visible;
+                background: #ffffff url('/processing.gif') no-repeat center center;
 
-	</head>
+            }
+        </style>
+        
+
+    </head>
 	<body>
 	<div id ="c">
+    <div id="preloader"></div>
  		<div class="wrapper">
         	<div class="wrap">
         		<div id="header">
 
         		</div>
-        		<div id="message" >Game Load
+        		<div id="message" >
         			
         		</div>
-        			<a href="/test]||[clik]||[gg">URL testing</a>
         	  <div id="footer"></div>
            </div>
         </div>
     </div>
 	</body>
 	<script type="text/javascript" src="/js/libs/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/interface.js"></script>
     <script type="text/javascript" src="/js/kernel/kernel.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
-        	var router = _.expansion.load("router");
+            var router = _.expansion.load("router");
         	var rd = {
         			"/" : {
-                       modules : "test",
+                       modules : "index",
                        location: "index",
                        data:     ""
                     },
-        	}
+        	};
         	
         	$(document).on('click', '#c a', function(e){
+                    _i.loader.start();
         			e.preventDefault() 
     				router.hr($(this).attr('href'),rd);
+                    _i.loader.stop();
         	});
 			
 			router.start(router.parseURL(location.pathname),rd); 
-
-            var db = _.expansion.load("db");
-            _.log.set("info", db)
-            var DB = db.init("/js/kernel/expansion/db/db.json");
+            _.css_load("/css/full.css");
+            _i.loader.stop();
+           // _i.gameInfo.set(1000,0,1,0,0,100,100,100,100,5,5);
             
-            db.set(DB, "users", "login", "admin")
-            var users =  db.select(DB, "users", "login");
-            alert(users);
+
+
 		});
 
     </script>
